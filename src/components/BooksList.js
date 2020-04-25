@@ -6,7 +6,7 @@ const BooksList = ({books}) => {
     
         if (books?.books){
             return (<ListGroup>
-                {books.books.map(book => <ListGroupItem key={book.isbn}>{book.title} ({book.isbn}) </ListGroupItem> )}
+                {books.books.map(book => <ListGroupItem key={book.isbn}>{book.title} by <b>Author</b> (ISBN: {book.isbn}) </ListGroupItem> )}
             </ListGroup>)
         } else {
             return <p>There were no books loaded</p>
@@ -15,7 +15,8 @@ const BooksList = ({books}) => {
 }
 
 const mapStateToProps = state => ({
-    books: state.books
+    books: state.books,
+    authors: state.authors
   })
   
   
