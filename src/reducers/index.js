@@ -1,16 +1,10 @@
 
-export const FetchBooks = (state = {books: []}, action) => {
+export const FetchPublications = (state = {all: []}, action) => {
     switch (action.type) {
         case "BOOKS_LOADED":
-            return {...state, books: action.payload};
-        default: return state;
-    }
-}
-
-export const FetchMagazines = (state = {magazines:[]}, action) => {
-    switch (action.type) {
+            return {...state, all: state.all.concat(action.payload.map(e => ({...e, type: "book"})))};
         case "MAGAZINES_LOADED":
-            return {...state, magazines: action.payload};
+            return {...state, all: state.all.concat(action.payload.map(e => ({...e, type: "magazine"})))};
         default: return state;
     }
 }

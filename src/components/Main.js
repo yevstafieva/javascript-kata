@@ -3,7 +3,7 @@ import {
     Container,
     } from 'reactstrap';
 
-import BookList from './BooksList';
+import PublicationsList from './PublicationsList';
 
 class Main extends Component {
     render () {
@@ -11,7 +11,7 @@ class Main extends Component {
         <Container>
             <h1 className="text-center">Library</h1>
             <h2>Books</h2>
-            <BookList />
+            <PublicationsList />
         </Container>
       )
     }
