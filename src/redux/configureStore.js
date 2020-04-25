@@ -1,20 +1,20 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
+import {FetchBooks, FetchMagazines, FetchAuthors} from '../reducers';
 
 
 export const ConfigureStore = () => {
     const store = createStore(
         combineReducers ({
-            books: null,
-            magazines: null,
-            authors: null
+            books: FetchBooks,
+            magazines: FetchMagazines,
+            authors: FetchAuthors
         }),
         { 
             books: [],
             magazines: [],
-            authors: [],
-            searchResults: [] 
+            authors: []
         },
         applyMiddleware(logger, thunk)
     )
