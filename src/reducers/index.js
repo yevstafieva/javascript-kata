@@ -18,7 +18,12 @@ export const FetchMagazines = (state = {magazines:[]}, action) => {
 export const FetchAuthors = (state = {authors: []}, action) => {
     switch (action.type) {
         case "AUTHORS_LOADED":
-            return {...state, authors: action.payload};
+            const authorMap = (action.payload) ? 
+            action.payload.reduce((total, elem) => {
+                total[elem.email] = elem;
+                return total;
+            }, {}) : {};
+            return {...state, authors: authorMap};
         default: return state;
     }
 }

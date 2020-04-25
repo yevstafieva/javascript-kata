@@ -4,9 +4,9 @@ import { ListGroup, ListGroupItem } from 'reactstrap';
 
 const BooksList = ({books}) => {
     
-        if (books?.books?.data){
+        if (books?.books){
             return (<ListGroup>
-                {books.books.data.map(book => <ListGroupItem key={book.isbn}>{book.title} ({book.isbn}) </ListGroupItem> )}
+                {books.books.map(book => <ListGroupItem key={book.isbn}>{book.title} ({book.isbn}) </ListGroupItem> )}
             </ListGroup>)
         } else {
             return <p>There were no books loaded</p>
