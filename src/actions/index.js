@@ -52,3 +52,23 @@ export const fetchAuthors = (filename) => {
     };
 }
 
+// export const searchItem = (searchRequest) => {
+//     return (dispatch) => dispatch({
+//         type: "SEARCH_REQUEST",
+//         payload: searchRequest
+//     })
+// }
+
+export const filterISBN = (filter) => {
+    return (dispatch) => dispatch({
+        type: "FILTER_BY_ISBN",
+        payload: filter
+    })
+}
+
+export const filterAuthor = (filter) => {
+    return (dispatch) => dispatch({
+        type: "FILTER_BY_AUTHORS",
+        payload: filter
+    })
+}

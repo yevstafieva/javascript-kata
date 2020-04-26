@@ -21,3 +21,11 @@ export const FetchAuthors = (state = {authors: []}, action) => {
         default: return state;
     }
 }
+
+export const Filter = (state = {}, action) => {
+    switch (action.type) {
+        case "FILTER_BY_ISBN": return {...state, filterByISBN: action.payload};
+        case "FILTER_BY_AUTHORS": return {...state, filterByAuthors: action.payload.split(",")};
+        default: return state;
+    }
+}

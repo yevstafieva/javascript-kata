@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { 
-    Container,
+    Container
     } from 'reactstrap';
 
 import PublicationsList from './PublicationsList';
+import Search from './SearchComponent'
 
 class Main extends Component {
     render () {
@@ -11,6 +12,7 @@ class Main extends Component {
         <Container>
             <h1 className="text-center">Library</h1>
             <h2>Books</h2>
+            <Search />
             <PublicationsList />
         </Container>
       )
